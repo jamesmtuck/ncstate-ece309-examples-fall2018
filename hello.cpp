@@ -4,6 +4,12 @@ class Rectangle {
 private:
   int width;
   int length;
+
+public:
+  Rectangle(int w, int l) {
+    width = w;
+    length = l;
+  }
   int area()
   {
     return width*length;
@@ -23,12 +29,10 @@ int area(int w, int l)
 
 int main()
 {
-  struct rectangle r1 = { 3, 4 };
-  struct rectangle r2 = { 10, 12 };
+  //struct rectangle r1 = { 3, 4 };
+  //struct rectangle r2 = { 10, 12 };
 
-  Rectangle r;
-  r.width = 5;
-  r.length = 10;
+  Rectangle r(5,10);
 
   printf("Hello, World! area = %d\n", r.area());
   return 0;
