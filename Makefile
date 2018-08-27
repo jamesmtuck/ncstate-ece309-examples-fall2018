@@ -1,5 +1,9 @@
+
 all:
-	$(CC) -o hello hello.cpp -Wall -Werror
+	$(CXX) -o hello hello.cpp -Wall -Werror
 
 test: all
 	./hello
+
+clean:
+	rm hello *~
