@@ -8,4 +8,8 @@ compiler:
   - clang
   - gcc
 
+matrix:
+  allow_failures:
+    - os: osx
+
 script: make && make test

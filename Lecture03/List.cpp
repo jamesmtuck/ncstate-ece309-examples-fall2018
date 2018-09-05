@@ -1,16 +1,16 @@
 #include <stdio.h>
 
+// Hold a string
 class Item {
 public:
   const char * str;
   Item(const char *as = "") 
   { 
-    str = as; 
+    str = as;
   }
 };
 
-
-class List {
+struct List {
 private:
 
 // ListNode represents each 
@@ -43,8 +43,6 @@ private:
   ListNode *head;
   ListNode *tail;
 
-
-  
 public:
   List();
   void append(Item a);    
