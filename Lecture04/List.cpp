@@ -4,38 +4,38 @@
 class Item {
 public:
   const char * str;
-  Item(const char *as = "") 
-  { 
+  Item(const char *as = "")
+  {
     str = as;
   }
 };
 
-struct List {
+class List {
 private:
 
-// ListNode represents each 
+// ListNode represents each
 // node of the list
   class ListNode {
   public:
     Item item; // data in the list
-    ListNode *next;	
+    ListNode *next;
   public:
-    ListNode(Item a, ListNode *n=NULL) 
-    { 
-      item = a; 
+    ListNode(Item a, ListNode *n=NULL)
+    {
+      item = a;
       next=n; // automatically serves as a list tail
     }
-    ListNode* getNext() 
-    { 
-      return next; 
+    ListNode* getNext()
+    {
+      return next;
     }
-    void setNext(ListNode *n) 
-    { 
-      next = n; 
+    void setNext(ListNode *n)
+    {
+      next = n;
     }
-    Item& getItem() 
-    { 
-      return item; 
+    Item& getItem()
+    {
+      return item;
     }
   };
 
@@ -61,9 +61,9 @@ public:
 
 public:
   List();
-  void append(Item a);    
-  bool remove(Item &a);    
-  bool empty(); 
+  void append(Item a);
+  bool remove(Item &a);
+  bool empty();
 
   iterator begin()
   {
@@ -90,14 +90,14 @@ void List::append(Item a)
       head = node;
       tail = node;
     }
-  else 
+  else
     {
       tail->setNext(node);
       tail = node;
     }
 }
 
-bool List::remove(Item &copy) 
+bool List::remove(Item &copy)
 {
   if (!empty()) // if list is not empty
     {
@@ -105,7 +105,7 @@ bool List::remove(Item &copy)
       ListNode *tmp = head->getNext();
       delete head; // delete the node
       head = tmp;  // update the head
-      if (tmp==NULL) // removed last element 
+      if (tmp==NULL) // removed last element
 	tail = NULL;
       return true;
     }
@@ -119,7 +119,7 @@ bool List::empty()
 
 void List::insertAfter(List::iterator it, Item item) // pseudocode in zyBook 2.3
 {
-    if (it.node==NULL) 
+    if (it.node==NULL)
       { // special case to insert at the head
 	// point new node at current head of list
 	ListNode *node = new ListNode(item,head);
@@ -134,7 +134,7 @@ void List::insertAfter(List::iterator it, Item item) // pseudocode in zyBook 2.3
       {
 	ListNode *node = new ListNode(item,it.node->getNext());
 	it.node->setNext(node);
-	if (tail==it.node) tail = node;     
+	if (tail==it.node) tail = node;
       }
 }
 
@@ -142,8 +142,8 @@ void List::removeAfter(List::iterator it) // pseudocode in zyBook 2.4
 {
    if (it.node==NULL) // special case to remove head, it’s not after any node
      {
-       ListNode *remove = head;               // will remove the head      
-       head = head->getNext();      // advance head 
+       ListNode *remove = head;               // will remove the head
+       head = head->getNext();      // advance head
        if (head==NULL) tail = NULL; // if head is NULL now, list is empty
        delete remove;               // delete removed node
      }

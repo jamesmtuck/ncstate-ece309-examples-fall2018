@@ -1,5 +1,5 @@
 
-EXE = List
+EXE = DList
 
 all: $(EXE)
 
