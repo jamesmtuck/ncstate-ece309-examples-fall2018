@@ -7,7 +7,7 @@ private:
 public:
     Rectangle(int w, int l):width(w),length(l) {}
     int area() { return width * length; }
-    virtual void print() { printf("Rectangle"); }
+    void print() { printf("Rectangle"); }
 };
 
 class Square : public Rectangle {
