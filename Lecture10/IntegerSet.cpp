@@ -47,9 +47,11 @@ int main()
   while(count < 100)
   {
       int r = rand() % 200;
-      if ( set.insert(r) ) {
-        count++;
-        printf("%d:%d\n",count,r);
+      if ( !set.search(r) ) {
+        if ( set.insert(r) ) {
+          count++;
+          printf("%d:%d\n",count,r);
+        }
       } else {
         printf("????\n");
       }
