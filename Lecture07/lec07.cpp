@@ -7,7 +7,7 @@ private:
 public:
     Rectangle(int w, int l):width(w),length(l) {}
     int area() { return width * length; }
-    void print() { printf("Rectangle"); }
+    virtual void print() { printf("Rectangle"); }
 };
 
 class Square : public Rectangle {
@@ -28,6 +28,11 @@ Square::Square(int side)
 {
 }*/
 
+void test(Rectangle &r)
+{
+  r.print();
+}
+
 int main()
 {
   Square s(5);
@@ -40,5 +45,6 @@ int main()
   printf("\n");
   ref.print();printf("\n");
   r.print();printf("\n");
+  test(s);
   return 0;
 }

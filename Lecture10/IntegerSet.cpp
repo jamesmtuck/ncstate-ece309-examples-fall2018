@@ -34,7 +34,6 @@ void IntegerSetHT::remove(int data)
 {
    if ( table[hash(data)] == data )
        table[hash(data)] = -1;
-
 }
 
 
