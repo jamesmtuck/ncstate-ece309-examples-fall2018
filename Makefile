@@ -15,10 +15,10 @@ clean: $(addsuffix -clean,$(DIRS))
 	rm -f hello *~
 
 $(addsuffix -all,$(DIRS)):
-	make -k -C $(subst -all,,$@) all
+	make -C $(subst -all,,$@) all
 
 $(addsuffix -test,$(DIRS)):
-	make -k -C $(subst -test,,$@) test
+	make -C $(subst -test,,$@) test
 
 $(addsuffix -clean,$(DIRS)):
-	make -k -C $(subst -clean,,$@) clean
+	make -C $(subst -clean,,$@) clean
