@@ -6,7 +6,7 @@ all: $(EXE)
 test: all
 
 clean:
-	rm -f $(EXE) *~ logfile.txt
+	rm -f $(EXE) *~ logfile.txt *.o
 
 IntegerSet: IntegerSet.o List.o
 	$(CXX) -o $@ $^ -Wall -std=c++11
