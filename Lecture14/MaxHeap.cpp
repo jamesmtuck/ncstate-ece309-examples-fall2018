@@ -49,7 +49,7 @@ void MaxHeap::percolate_down(int index, int size) {
   while (child_index < size) {
     int max_val = val;
     int max_index = -1;
-    for (int i = child_index; i < child_index + 2; i++) {
+    for (int i = child_index; i < child_index + 2 && i < size; i++) {
       if (heapArray[i] > max_val) {
         max_val = heapArray[i];
         max_index = i;
