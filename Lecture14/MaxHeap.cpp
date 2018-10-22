@@ -103,5 +103,13 @@ int main() {
   heap.remove(ref);
   heap.print();
 
+  for (int i = 0; i < 100; i++)
+    heap.insert(rand() % 1000);
+
+  for (int i = 0; i < 20; i++)
+    heap.remove(ref);
+
+  heap.print();
+
   return 0;
 }
