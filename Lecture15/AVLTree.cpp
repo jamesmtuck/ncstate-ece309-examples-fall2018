@@ -180,20 +180,12 @@ void AVLTree::remove(int data) {
 }
 
 int main() {
-  AVLTree bst;
-  // BinarySearchTree bst;
+  // AVLTree bst;
+  BinarySearchTree bst;
   srand(time(NULL));
 
   for (int i = 0; i < 10; i++)
     bst.insert(i);
-
-  bst.print();
-
-  for (int i = 5; i < 10; i++)
-    bst.remove(i);
-
-  bst.print();
-  bst.insert(-1);
 
   bst.print();
 
