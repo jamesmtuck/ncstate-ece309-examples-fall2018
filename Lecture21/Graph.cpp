@@ -259,7 +259,7 @@ void MinimumSpanningTree(Graph &g, EdgeList &resultList) {
 
   EdgeList::iterator ei;
   int numNodes = g.getNumNodes();
-  for (ei = eList.begin(); numNodes > 0 && !ei.end(); ei.increment()) {
+  for (ei = eList.begin(); numNodes > 1 && !ei.end(); ei.increment()) {
     Edge e = ei.getEdge();
     if (nodes[e.from].vertexSet != nodes[e.to].vertexSet) {
       // not yet connected!
@@ -295,7 +295,7 @@ int main() {
     printf("%d ", it.getItem());
     it.increment();
   }
-  printf("");
+  printf("\n");
 
   WeightedDenseGraph wg(6);
   wg.addEdge(0, 1, 450);
