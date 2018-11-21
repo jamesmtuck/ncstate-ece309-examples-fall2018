@@ -6,7 +6,7 @@ all: $(EXE)
 test: all
 
 clean:
-	rm -f $(EXE) *~ logfile.txt
+	rm -f $(EXE) *~ logfile.txt List.o Stack.o stack-test.o queue-test.o Queue.o *.o
 
 stack-test: stack-test.o List.o Stack.o
 	$(CXX) -o $@ stack-test.o List.o Stack.o

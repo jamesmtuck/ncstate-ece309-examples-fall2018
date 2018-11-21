@@ -156,10 +156,7 @@ public:
   }
 
   virtual void run() {
-    // TODO: find all the nodes with no incoming edges
-
     List nodes = getNodesWithNoIncomingEdges(g);
-
     List::iterator it = nodes.begin();
     while (!it.end()) {
       dfs(it.getItem());
