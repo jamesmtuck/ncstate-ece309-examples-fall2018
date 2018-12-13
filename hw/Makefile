@@ -1,4 +1,4 @@
-all: IntArray_test IntegerSet avl IntInf
+all: IntArray_test IntegerSet avl IntInf MinHeap
 
 IntArray_test: IntArray.o IntArray_test.o
 	$(CXX) -o $@ $^ -std=c++11 -Wall -Werror -g
@@ -10,6 +10,9 @@ avl: AVLTree.o BinarySearchTree.o
 	$(CXX) -o $@ $^ -std=c++11 -Wall -Werror -g
 
 IntInf: IntInf.o
+	$(CXX) -o $@ $^ -std=c++11 -Wall -Werror -g
+
+MinHeap: Graph.o List.o
 	$(CXX) -o $@ $^ -std=c++11 -Wall -Werror -g
 
 %.o : %.cpp
